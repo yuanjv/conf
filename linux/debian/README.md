@@ -28,5 +28,16 @@ deb-src http://deb.debian.org/debian/ bookworm-updates main non-free-firmware no
 # entries were disabled at the end of the installation process.
 # For information about how to configure apt package sources,
 # see the sources.list(5) manual.
+```
 
+### follow the instructions: https://wiki.debian.org/NvidiaGraphicsDrivers#Installation
+
+### if the nvidia card unable to use full power (nvidia-smi shows x W / y W, y < the target max)
+
+```
+apt install nvidia-powerd
+```
+add this to `sudo crontab -e`
+```
+@reboot /usr/sbin/nvidia-powerd
 ```
