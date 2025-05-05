@@ -1,4 +1,4 @@
-# DOCKER CONFIG FROM root@n100:/opt/docker
+# DOCKER CONFIG FROM root@n100:/opt/docker -ish
 
 ## proxy settings:
 /etc/systemd/system/docker.service.d/http-proxy.conf
