@@ -1,0 +1,41 @@
+#zerotier
+% run zerotier on boot and join my network (the last part is the network id)
+docker run -d --name zerotier --restart unless-stopped --cap-add NET_ADMIN --device /dev/net/tun zerotier/zerotier 9e1948db63220136
+% installed socat
+% in /entrypoint.sh (forward all ssh to host)
+/usr/bin/socat tcp-listen:22,fork tcp:$(ip route | awk '/default/ {print $3}'):22  &
+
+#playit
+% can't do this since entrypoint.sh does not exist. even the container is created, i can't start and therefore i can't exec anything in it
+docker run -d --name playit --restart unless-stopped --entrypoint /entrypoint.sh alpine
+
+#wireguard
+docker run -d \
+  --name=wireguard \
+  --cap-add=NET_ADMIN \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Shanghai \
+  -e SERVERURL=localhost `#optional` \
+  -e SERVERPORT=51820 `#optional` \
+  -e PEERS=16 `#optional` \
+  -e PEERDNS=auto `#optional` \
+  -e INTERNAL_SUBNET=10.13.13.0 `#optional` \
+  -e ALLOWEDIPS=0.0.0.0/0 `#optional` \
+  -e PERSISTENTKEEPALIVE_PEERS= `#optional` \
+  -e LOG_CONFS=false `#optional` \
+  -p 51820:51820/udp \
+  -v /opt/docker/wireguard:/config \
+  --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
+  --restart unless-stopped \
+  lscr.io/linuxserver/wireguard
+
+#homeassistant
+docker run -d \
+  --name homeassistant \
+  --restart=unless-stopped \
+  -e TZ=Asia/Shanghai \
+  -v /opt/docker/homeassistant:/config \
+  -v /run/dbus:/run/dbus:ro \
+  --network=host \
+  ghcr.io/home-assistant/home-assistant
