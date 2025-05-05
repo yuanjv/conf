@@ -1,7 +1,7 @@
 # DOCKER CONFIG FROM root@n100:/opt/docker
 
 ## proxy settings:
-> /etc/systemd/system/docker.service.d/http-proxy.conf:
+/etc/systemd/system/docker.service.d/http-proxy.conf:
 '''
 [Service]
 Environment="HTTP_PROXY=http://127.0.0.1:10809"
