@@ -1,6 +1,6 @@
 # MY ALPINE LINUX STARTING CONFIG
 
-##setup-alpine
+## setup-alpine
 >storage: lvm [return] sysencrpypt [return]
 
 ## start with latest stable
