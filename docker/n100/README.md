@@ -1,0 +1,1 @@
+# DOCKER CONFIG FROM root@n100:/opt/docker
