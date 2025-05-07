@@ -13,6 +13,7 @@
 flatpak intall -u XXX
 flatpak uninstall -u XXX
 ```
+also use `Flatseal` pls
 #### docker
 just use root user for docker managments. able to do stuff with docker container means able to do almost anything in the system
 
