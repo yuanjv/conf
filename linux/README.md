@@ -5,7 +5,7 @@
 ### TIMERS
 `systemd timer` sucks. `crontab` is good enough
 
-### PUT EVERYTHING IN CONTAINERS
+### PUT EVERYTHING IN CONTAINERS IF YOU CAN
 
 #### flatpak
 ```
