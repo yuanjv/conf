@@ -14,3 +14,6 @@ flatpak uninstall -u XXX
 ```
 #### docker
 just use root user for docker managments. able to do stuff with docker container means able to do almost anything in the system
+
+#### snapd
+fuck this
