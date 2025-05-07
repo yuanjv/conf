@@ -5,3 +5,12 @@
 ### TIMERS
 `systemd timer` sucks. `crontab` is good enough
 
+### PUT EVERYTHING IN CONTAINERS
+
+#### flatpak
+```
+flatpak intall -u XXX
+flatpak uninstall -u XXX
+```
+#### docker
+just use root user for docker managments. able to do stuff with docker container means able to do almost anything in the system
