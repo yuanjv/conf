@@ -1,4 +1,4 @@
-# LINUX
+# UNIX-LIKE
 
 ## personal takes
 
