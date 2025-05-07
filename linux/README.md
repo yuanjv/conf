@@ -1,4 +1,5 @@
 # UNIX-LIKE
+(macos is not unix-like btw)
 
 ## personal takes
 
